@@ -7,14 +7,18 @@ import { TaskContextProvider } from "./context/TaskContext.jsx";
 
 export default function App() {
   return (
-    <TaskContextProvider>
+    <div class="containerAu">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Taskpage />}></Route>
-        <Route path="/new" element={<TaskForm />}></Route>
-        <Route path="/edit/:id" element={<TaskForm />}></Route>
-        <Route path="*" element={<NotFoundPage />}></Route>
-      </Routes>
-    </TaskContextProvider>
+      <div className="container mx-auto py-4">
+        <TaskContextProvider>
+          <Routes>
+            <Route path="/" element={<Taskpage />}></Route>
+            <Route path="/new" element={<TaskForm />}></Route>
+            <Route path="/edit/:id" element={<TaskForm />}></Route>
+            <Route path="*" element={<NotFoundPage />}></Route>
+          </Routes>
+        </TaskContextProvider>
+      </div>
+    </div>
   );
 }
